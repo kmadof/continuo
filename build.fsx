@@ -36,7 +36,7 @@ Target.create "BuildDb" (fun _ ->
 /// the database for local development + compile
 Target.create "DeployLocalDb" (fun _ ->
     let connectionString = "Data Source=.;Initial Catalog=Notitia;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False"
-    let dacPacPath = "build/Notitia.dacpac"
+    let dacPacPath = "./build/Notitia.dacpac"
     Fake.Sql.DacPac.deployDb (fun args -> { args with Source = dacPacPath; Destination = connectionString }) |> ignore)
 
 Target.create "Default" (fun _ ->
