@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="que\Tables\Questionnaire.sql" />
+    <Build Include="que\Tables\Track.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Schemas\que.sql" />
