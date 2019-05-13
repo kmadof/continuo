@@ -2,6 +2,7 @@
 nuget Fake.IO.FileSystem
 nuget Fake.Dotnet.MSBuild
 nuget Fake.Sql.DacPac
+nuget Fake.BuildServer.TeamCity
 nuget Fake.Core.Target //"
 #load "./.fake/build.fsx/intellisense.fsx"
 
@@ -9,6 +10,14 @@ open Fake.Core
 open Fake.IO
 open Fake.IO.Globbing.Operators
 open Fake.DotNet
+open Fake.BuildServer
+
+BuildServer.install [
+    TeamCity.Installer
+]
+
+// If you additionally want output in the console, even on the build-server (otherwise remove this line).
+CoreTracing.ensureConsoleListener ()
 
 // Properties
 let buildDir = "./build/"
