@@ -1,0 +1,4 @@
+﻿CREATE TABLE [que].[Track]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
